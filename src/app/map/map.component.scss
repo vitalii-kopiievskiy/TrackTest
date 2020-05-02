@@ -1,0 +1,17 @@
+.map {
+  & {
+    border: 2px solid gray;
+    border-radius: 12px;
+  }
+  &__title {
+    background-color: lightgray;
+    margin-bottom: 2px;
+    border-top-left-radius: 12px;
+    border-top-right-radius: 12px;
+  }
+}
+
+agm-map {
+  height: 300px;
+  width: 100%;
+}

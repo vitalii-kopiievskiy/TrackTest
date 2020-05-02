@@ -1,1 +1,13 @@
-<p>map works!</p>
+<div class="map">
+  <p class="map__title pl-2">Map</p>
+  <agm-map
+    [latitude]="trackService.lat"
+    [zoom]="trackService.zoom"
+    [longitude]="trackService.lng"
+  >
+    <agm-marker
+      [latitude]="trackService.lat"
+      [longitude]="trackService.lng"
+    ></agm-marker>
+  </agm-map>
+</div>
