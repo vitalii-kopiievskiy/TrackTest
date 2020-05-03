@@ -9,11 +9,6 @@ import {
 
 import { DialogTrackAddComponent } from "../dialog-track-add/dialog-track-add.component";
 
-export interface DialogData {
-  animal: string;
-  name: string;
-}
-
 @Component({
   selector: "app-tracks-forms",
   templateUrl: "./tracks-forms.component.html",

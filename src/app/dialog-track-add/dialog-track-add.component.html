@@ -1,7 +1,7 @@
 <div class="container">
   <div class="dialog">
     <h5 class="dialog__title">Add new asset</h5>
-    <form action="">
+    <form [formGroup]="form" (ngSubmit)="addTrack()">
       <div class="row">
         <div class="col-4 d-flex flex-column">
           <label for="name">Name</label>
@@ -14,22 +14,50 @@
             id="name"
             name="name"
             [(ngModel)]="trackService.newName"
+            formControlName="name"
           />
+          <div
+            class="validations"
+            *ngIf="form.get('name').invalid && form.get('name').touched"
+          >
+            <small>Заполните поле name</small>
+          </div>
           <input
             type="text"
             id="lat"
             name="lat"
             [(ngModel)]="trackService.newLat"
+            formControlName="latitude"
           />
+          <div
+            class="validations"
+            *ngIf="form.get('latitude').invalid && form.get('latitude').touched"
+          >
+            <small>Заполните поле latitude</small>
+          </div>
           <input
             type="text"
             id="long"
             name="long"
             [(ngModel)]="trackService.newLong"
+            formControlName="longitude"
           />
+          <div
+            class="validations"
+            *ngIf="
+              form.get('longitude').invalid && form.get('longitude').touched
+            "
+          >
+            <small>Заполните поле longitude</small>
+          </div>
           <div mat-mat-dialog-actions>
-            <button mat-dialog-close>Cancel</button>
-            <button mat-dialog-close (click)="trackService.addTrack()">
+            <button mat-dialog-close type="button">Cancel</button>
+            <button
+              mat-dialog-close
+              (click)="trackService.addTrack()"
+              type="submit"
+              [disabled]="form.invalid"
+            >
               Add
             </button>
           </div>
