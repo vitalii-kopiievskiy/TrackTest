@@ -1,6 +1,6 @@
 <ul class="tracks">
   <li
-    *ngFor="let track of trackService.tracks"
+    *ngFor="let track of trackService.tracks | search: trackService.search"
     style="list-style: none; cursor: pointer;"
   >
     <!-- <p (click)="cardsService.sendCoord(card.lat)"></p> -->

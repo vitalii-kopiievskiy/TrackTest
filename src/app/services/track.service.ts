@@ -24,6 +24,7 @@ export class trackService {
   newLat: any;
   newLong: any;
   removeTrack: any;
+  search = "";
 
   tracks: Track[] = [
     {

@@ -13,6 +13,7 @@ import { MapComponent } from "./map/map.component";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { DialogTrackAddComponent } from "./dialog-track-add/dialog-track-add.component";
 import { DialogTrackRemoveComponent } from './dialog-track-remove/dialog-track-remove.component';
+import { SearchPipe } from './pipes/search.pipe';
 
 @NgModule({
   declarations: [
@@ -22,6 +23,7 @@ import { DialogTrackRemoveComponent } from './dialog-track-remove/dialog-track-r
     MapComponent,
     DialogTrackAddComponent,
     DialogTrackRemoveComponent,
+    SearchPipe,
   ],
   entryComponents: [DialogTrackAddComponent],
   imports: [

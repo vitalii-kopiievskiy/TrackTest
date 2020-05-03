@@ -6,7 +6,6 @@ import {
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
 import { DialogTrackRemoveComponent } from "../dialog-track-remove/dialog-track-remove.component";
-import { EventEmitter } from "protractor";
 
 @Component({
   selector: "app-tracks",
