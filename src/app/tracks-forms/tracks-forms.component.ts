@@ -6,34 +6,33 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
+
+import { DialogTrackAddComponent } from "../dialog-track-add/dialog-track-add.component";
+
 export interface DialogData {
   animal: string;
   name: string;
 }
+
 @Component({
   selector: "app-tracks-forms",
   templateUrl: "./tracks-forms.component.html",
   styleUrls: ["./tracks-forms.component.scss"],
 })
 export class TracksFormsComponent implements OnInit {
+  animal: string;
+  name: string;
+
   constructor(public trackService: TrackService, public dialog: MatDialog) {}
   openDialog() {
-    this.dialog.open(DialogAddTrack);
+    const dialogRef = this.dialog.open(DialogTrackAddComponent, {
+      width: "300px",
+    });
+    dialogRef.afterClosed().subscribe((result) => {
+      console.log("The dialog was closed");
+      this.animal = result;
+      console.log(result);
+    });
   }
   ngOnInit(): void {}
-}
-
-@Component({
-  selector: "dialog-overview-example-dialog",
-  templateUrl: "dialog.add.track.component.html",
-})
-export class DialogAddTrack {
-  constructor(
-    public dialogRef: MatDialogRef<DialogAddTrack>,
-    @Inject(MAT_DIALOG_DATA) public data: DialogData
-  ) {}
-
-  onNoClick(): void {
-    this.dialogRef.close();
-  }
 }
