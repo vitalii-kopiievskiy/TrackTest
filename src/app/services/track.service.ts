@@ -65,6 +65,12 @@ export class trackService {
     const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
       width: "300px",
     });
+    this.removeTrack = track;
     console.log("track.name", track);
+  }
+
+  deleteTrack() {
+    this.tracks = this.tracks.filter((c) => c.name !== this.removeTrack);
+    console.log(this.removeTrack);
   }
 }
