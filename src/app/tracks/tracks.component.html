@@ -4,7 +4,7 @@
     style="list-style: none; cursor: pointer;"
   >
     <!-- <p (click)="cardsService.sendCoord(card.lat)"></p> -->
-    <span>
+    <span (click)="trackService.setCoord(track)">
       {{ track.name }}
     </span>
     <span class="close mr-3">&times;</span>
