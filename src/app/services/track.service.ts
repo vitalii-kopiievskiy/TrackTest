@@ -1,4 +1,10 @@
 import { Injectable } from "@angular/core";
+import {
+  MatDialog,
+  MatDialogRef,
+  MAT_DIALOG_DATA,
+} from "@angular/material/dialog";
+import { DialogTrackRemoveComponent } from "../dialog-track-remove/dialog-track-remove.component";
 
 export interface Track {
   name: any;
@@ -18,7 +24,7 @@ export class trackService {
   newName: string;
   newLat: any;
   newLong: any;
-  removeTrack: string;
+  removeTrack: any;
 
   tracks: Track[] = [
     {
@@ -32,7 +38,7 @@ export class trackService {
       long: -74.0059731,
     },
   ];
-  constructor() {}
+  constructor(public dialog: MatDialog) {}
 
   setCoord(track) {
     console.log(track);
@@ -53,5 +59,12 @@ export class trackService {
       this.newName = this.newLat = this.newLong = "";
     }
     console.log(this.tracks);
+  }
+
+  openRemoveDialog(track) {
+    const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
+      width: "300px",
+    });
+    console.log("track.name", track);
   }
 }

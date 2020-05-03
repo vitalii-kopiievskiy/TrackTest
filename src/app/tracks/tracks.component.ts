@@ -1,4 +1,4 @@
-import { Component, OnInit } from "@angular/core";
+import { Component, OnInit, Output } from "@angular/core";
 import { trackService } from "../services/track.service";
 import {
   MatDialog,
@@ -6,6 +6,7 @@ import {
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
 import { DialogTrackRemoveComponent } from "../dialog-track-remove/dialog-track-remove.component";
+import { EventEmitter } from "protractor";
 
 @Component({
   selector: "app-tracks",
@@ -15,17 +16,10 @@ import { DialogTrackRemoveComponent } from "../dialog-track-remove/dialog-track-
 export class TracksComponent implements OnInit {
   constructor(public trackService: trackService, public dialog: MatDialog) {}
 
-  openRemoveDialog(track) {
-    const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
-      width: "300px",
-    });
-    console.log(track.name);
-
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   console.log("The dialog was closed");
-    //   this.animal = result;
-    //   console.log(this.animal);
-    // });
-  }
+  // openRemoveDialog(track) {
+  //   const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
+  //     width: "300px",
+  //   });
+  // }
   ngOnInit(): void {}
 }
