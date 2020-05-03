@@ -12,6 +12,7 @@ import { TracksFormsComponent } from "./tracks-forms/tracks-forms.component";
 import { MapComponent } from "./map/map.component";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { DialogTrackAddComponent } from "./dialog-track-add/dialog-track-add.component";
+import { DialogTrackRemoveComponent } from './dialog-track-remove/dialog-track-remove.component';
 
 @NgModule({
   declarations: [
@@ -20,6 +21,7 @@ import { DialogTrackAddComponent } from "./dialog-track-add/dialog-track-add.com
     TracksFormsComponent,
     MapComponent,
     DialogTrackAddComponent,
+    DialogTrackRemoveComponent,
   ],
   entryComponents: [DialogTrackAddComponent],
   imports: [

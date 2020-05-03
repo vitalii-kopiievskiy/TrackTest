@@ -7,7 +7,9 @@
     <span (click)="trackService.setCoord(track)">
       {{ track.name }}
     </span>
-    <span class="close mr-3">&times;</span>
+    <span class="close mr-3" mat-raised-button (click)="openRemoveDialog(track)"
+      >&times;
+    </span>
 
     <p>{{ track.lat }}</p>
     <p>{{ track.long }}</p>

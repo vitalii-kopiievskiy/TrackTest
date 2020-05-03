@@ -18,6 +18,7 @@ export class trackService {
   newName: string;
   newLat: any;
   newLong: any;
+  removeTrack: string;
 
   tracks: Track[] = [
     {
