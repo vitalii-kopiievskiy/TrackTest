@@ -1,6 +1,16 @@
-<div class="tracks">
-  <p class="tracks__title pl-2">Assets</p>
-  <ul class="tracks__items">
-    <li style="list-style: none; cursor: pointer;">1</li>
-  </ul>
-</div>
+<ul class="tracks">
+  <li
+    *ngFor="let track of trackService.tracks"
+    style="list-style: none; cursor: pointer;"
+  >
+    <!-- <p (click)="cardsService.sendCoord(card.lat)"></p> -->
+    <span>
+      {{ track.name }}
+    </span>
+    <span class="close mr-3">&times;</span>
+
+    <p>{{ track.lat }}</p>
+    <p>{{ track.long }}</p>
+    <hr />
+  </li>
+</ul>

@@ -1,5 +1,5 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import { TrackService } from "../services/track.service";
+import { trackService } from "../services/track.service";
 
 import {
   MatDialog,
@@ -23,16 +23,17 @@ export class TracksFormsComponent implements OnInit {
   animal: string;
   name: string;
 
-  constructor(public trackService: TrackService, public dialog: MatDialog) {}
+  constructor(public trackService: trackService, public dialog: MatDialog) {}
   openDialog() {
     const dialogRef = this.dialog.open(DialogTrackAddComponent, {
       width: "300px",
     });
-    dialogRef.afterClosed().subscribe((result) => {
-      console.log("The dialog was closed");
-      this.animal = result;
-      console.log(result);
-    });
+
+    // dialogRef.afterClosed().subscribe((result) => {
+    //   console.log("The dialog was closed");
+    //   this.animal = result;
+    //   console.log(this.animal);
+    // });
   }
   ngOnInit(): void {}
 }

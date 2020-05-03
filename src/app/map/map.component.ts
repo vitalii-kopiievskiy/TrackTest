@@ -1,5 +1,5 @@
 import { Component, OnInit } from "@angular/core";
-import { TrackService } from "../services/track.service";
+import { trackService } from "../services/track.service";
 
 @Component({
   selector: "app-map",
@@ -7,7 +7,7 @@ import { TrackService } from "../services/track.service";
   styleUrls: ["./map.component.scss"],
 })
 export class MapComponent implements OnInit {
-  constructor(public trackService: TrackService) {}
+  constructor(public trackService: trackService) {}
 
   ngOnInit(): void {}
 }

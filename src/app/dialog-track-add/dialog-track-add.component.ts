@@ -1,9 +1,10 @@
 import { Component, OnInit, Inject } from "@angular/core";
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from "@angular/material/dialog";
+import { trackService } from "../services/track.service";
+// import {
+//   MatDialog,
+//   MatDialogRef,
+//   MAT_DIALOG_DATA,
+// } from "@angular/material/dialog";
 
 export interface DialogData {
   animal: string;
@@ -16,5 +17,5 @@ export interface DialogData {
   styleUrls: ["./dialog-track-add.component.scss"],
 })
 export class DialogTrackAddComponent {
-  constructor() {}
+  constructor(public trackService: trackService) {}
 }
