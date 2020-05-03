@@ -4,7 +4,6 @@ import {
   MatDialogRef,
   MAT_DIALOG_DATA,
 } from "@angular/material/dialog";
-import { DialogTrackRemoveComponent } from "../dialog-track-remove/dialog-track-remove.component";
 
 export interface Track {
   name: any;
@@ -61,16 +60,8 @@ export class trackService {
     console.log(this.tracks);
   }
 
-  openRemoveDialog(track) {
-    const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
-      width: "300px",
-    });
-    this.removeTrack = track;
-    console.log("track.name", track);
-  }
-
-  deleteTrack() {
-    this.tracks = this.tracks.filter((c) => c.name !== this.removeTrack);
-    console.log(this.removeTrack);
-  }
+  // deleteTrack() {
+  //   this.tracks = this.tracks.filter((c) => c.name !== this.removeTrack);
+  //   console.log(this.removeTrack);
+  // }
 }

@@ -16,10 +16,11 @@ import { EventEmitter } from "protractor";
 export class TracksComponent implements OnInit {
   constructor(public trackService: trackService, public dialog: MatDialog) {}
 
-  // openRemoveDialog(track) {
-  //   const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
-  //     width: "300px",
-  //   });
-  // }
+  openRemoveDialog(trackName) {
+    const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
+      width: "300px",
+    });
+    console.log(trackName);
+  }
   ngOnInit(): void {}
 }
