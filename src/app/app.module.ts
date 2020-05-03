@@ -1,4 +1,5 @@
 import { BrowserModule } from "@angular/platform-browser";
+import { FormsModule, ReactiveFormsModule } from "@angular/forms";
 import { NgModule } from "@angular/core";
 import { AgmCoreModule } from "@agm/core";
 import { MatDialogModule } from "@angular/material/dialog";
@@ -23,6 +24,8 @@ import { DialogTrackAddComponent } from "./dialog-track-add/dialog-track-add.com
   entryComponents: [DialogTrackAddComponent],
   imports: [
     BrowserModule,
+    FormsModule,
+    ReactiveFormsModule,
     AgmCoreModule.forRoot({
       apiKey: "AIzaSyCDW00wd4VXgnZBcUrO4fmO0oXp0kVHK6g",
     }),

@@ -1,9 +1,9 @@
 import { Injectable } from "@angular/core";
 
 export interface Track {
-  name: string;
-  lat: number;
-  long: number;
+  name: any;
+  lat: any;
+  long: any;
   // id?: number;
 }
 
@@ -11,9 +11,13 @@ export interface Track {
   providedIn: "root",
 })
 export class trackService {
-  lat: number = -23.8779431;
-  lng: number = -49.8046873;
+  lat: any = -23.8779431;
+  lng: any = -49.8046873;
   zoom: number = 15;
+
+  newName: string;
+  newLat: any;
+  newLong: any;
 
   tracks: Track[] = [
     {
@@ -22,10 +26,25 @@ export class trackService {
       long: -49.8046873,
     },
     {
-      name: "NY",
+      name: "Truck002",
       lat: 40.7143528,
       long: -74.0059731,
     },
   ];
   constructor() {}
+
+  addTrack() {
+    if (this.newName.trim() && this.newLat && this.newLong) {
+      const newTrack: Track = {
+        name: this.newName,
+        lat: +this.newLat,
+        long: +this.newLong,
+      };
+
+      console.log(newTrack);
+      this.tracks.unshift(newTrack);
+      this.newName = this.newLat = this.newLong = "";
+    }
+    console.log(this.tracks);
+  }
 }
