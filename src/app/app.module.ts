@@ -12,8 +12,8 @@ import { TracksFormsComponent } from "./tracks-forms/tracks-forms.component";
 import { MapComponent } from "./map/map.component";
 import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { DialogTrackAddComponent } from "./dialog-track-add/dialog-track-add.component";
-import { DialogTrackRemoveComponent } from './dialog-track-remove/dialog-track-remove.component';
-import { SearchPipe } from './pipes/search.pipe';
+import { DialogTrackRemoveComponent } from "./dialog-track-remove/dialog-track-remove.component";
+import { SearchPipe } from "./pipes/search.pipe";
 
 @NgModule({
   declarations: [
@@ -25,7 +25,7 @@ import { SearchPipe } from './pipes/search.pipe';
     DialogTrackRemoveComponent,
     SearchPipe,
   ],
-  entryComponents: [DialogTrackAddComponent],
+  entryComponents: [DialogTrackAddComponent, DialogTrackRemoveComponent],
   imports: [
     BrowserModule,
     FormsModule,
