@@ -1,4 +1,12 @@
 <h4 class="title" mat-dialog-title>Warning</h4>
 <p>Are you sure you want delete {{ trackService.removedTrackName }}?</p>
-<button mat-dialog-close>Cancel</button>
-<button mat-dialog-close (click)="trackService.removeTrack()">Delete</button>
+<div class="actions d-flex justify-content-end">
+  <button mat-dialog-close class="btn btn-warning mr-3">Cancel</button>
+  <button
+    mat-dialog-close
+    class="btn btn-danger"
+    (click)="trackService.removeTrack()"
+  >
+    Delete
+  </button>
+</div>

@@ -19,7 +19,7 @@ export class TracksFormsComponent implements OnInit {
 
   openDialog() {
     this.dialog.open(DialogTrackAddComponent, {
-      width: "400px",
+      width: "320px",
     });
   }
   ngOnInit(): void {}
