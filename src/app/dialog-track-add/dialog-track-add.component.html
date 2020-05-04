@@ -1,9 +1,9 @@
 <div class="container">
   <div class="dialog">
-    <h5 class="dialog__title">Add new asset</h5>
+    <h5 class="title">Add new asset</h5>
     <form [formGroup]="form" (ngSubmit)="addTrack()">
       <div class="row">
-        <div class="col-12 d-flex justify-content-between pb-2">
+        <div class="col-12 d-flex justify-content-between pb-3 pt-3">
           <label for="name">Name</label>
           <input
             type="text"
@@ -20,7 +20,7 @@
           <small>Field name is empty</small>
         </div>
 
-        <div class="col-12 d-flex justify-content-between pb-2">
+        <div class="col-12 d-flex justify-content-between pb-3">
           <label for="lat">Latitude</label>
           <input
             type="text"
@@ -36,7 +36,7 @@
         >
           <small>Field latitude is empty</small>
         </div>
-        <div class="col-12 d-flex justify-content-between pb-2">
+        <div class="col-12 d-flex justify-content-between pb-3">
           <label for="long">Longitude</label>
           <input
             type="text"
