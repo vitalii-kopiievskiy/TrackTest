@@ -61,8 +61,8 @@ export class trackService {
     console.log(this.tracks);
   }
 
-  // deleteTrack() {
-  //   this.tracks = this.tracks.filter((c) => c.name !== this.removeTrack);
-  //   console.log(this.removeTrack);
-  // }
+  deleteTrack(track) {
+    this.tracks = this.tracks.filter((c) => c.name !== track.name);
+    console.log(track.name);
+  }
 }
