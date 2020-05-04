@@ -5,13 +5,13 @@
       *ngFor="let track of trackService.tracks | search: trackService.search"
       style="list-style: none; cursor: pointer;"
     >
-      <span (click)="trackService.setCoord(track)" class="pl-4">
+      <span (click)="trackService.getCoords(track)" class="pl-4">
         {{ track.name }}
       </span>
       <span
         class="close mr-3"
         mat-raised-button
-        (click)="trackService.deleteTrack(track)"
+        (click)="[openRemoveDialog(), trackService.getRemovedTrackName(track.name)]"
         >&times;
       </span>
       <hr />

@@ -22,7 +22,7 @@ export class trackService {
   newName: string;
   newLat: any;
   newLong: any;
-  removeTrack: any;
+  removedTrackName: string;
   search = "";
 
   tracks: Track[] = [
@@ -53,12 +53,15 @@ export class trackService {
     }
   }
 
-  setCoord(track) {
+  getCoords(track) {
     this.lat = track.lat;
     this.lng = track.long;
   }
+  getRemovedTrackName(trackName) {
+    this.removedTrackName = trackName;
+  }
 
-  deleteTrack(track) {
-    this.tracks = this.tracks.filter((c) => c.name !== track.name);
+  removeTrack() {
+    this.tracks = this.tracks.filter((c) => c.name !== this.removedTrackName);
   }
 }
