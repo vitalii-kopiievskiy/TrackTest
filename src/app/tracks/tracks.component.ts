@@ -16,9 +16,9 @@ import { EventEmitter } from "protractor";
 export class TracksComponent implements OnInit {
   constructor(public trackService: trackService, public dialog: MatDialog) {}
 
-  openRemoveDialog() {
+  openDialog() {
     const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
-      width: "300px",
+      width: "400px",
     });
   }
   ngOnInit(): void {}
