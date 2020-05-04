@@ -1,21 +1,20 @@
-<ul class="tracks">
-  <li
-    *ngFor="let track of trackService.tracks | search: trackService.search"
-    style="list-style: none; cursor: pointer;"
-  >
-    <!-- <p (click)="cardsService.sendCoord(card.lat)"></p> -->
-    <span (click)="trackService.setCoord(track)">
-      {{ track.name }}
-    </span>
-    <span
-      class="close mr-3"
-      mat-raised-button
-      (click)="trackService.deleteTrack(track)"
-      >&times;
-    </span>
-
-    <p>{{ track.lat }}</p>
-    <p>{{ track.long }}</p>
-    <hr />
-  </li>
-</ul>
+<div class="tracks">
+  <h4 class="title pl-2 pt-1 pb-1">Assets</h4>
+  <ul class="mt-3 pl-0">
+    <li
+      *ngFor="let track of trackService.tracks | search: trackService.search"
+      style="list-style: none; cursor: pointer;"
+    >
+      <span (click)="trackService.setCoord(track)" class="pl-4">
+        {{ track.name }}
+      </span>
+      <span
+        class="close mr-3"
+        mat-raised-button
+        (click)="trackService.deleteTrack(track)"
+        >&times;
+      </span>
+      <hr />
+    </li>
+  </ul>
+</div>

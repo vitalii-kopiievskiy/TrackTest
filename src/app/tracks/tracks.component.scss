@@ -1,13 +1,16 @@
 .tracks {
-  & {
-    border: 2px solid gray;
-    border-radius: 12px;
-    height: 300px;
-  }
-  &__title {
-    background-color: lightgray;
-    margin-bottom: 2px;
-    border-top-left-radius: 12px;
-    border-top-right-radius: 12px;
-  }
+  border: 2px solid gray;
+  border-radius: 12px;
+  height: 500px;
+}
+
+.title {
+  background-color: lightgray;
+  margin-bottom: 2px;
+  border-top-left-radius: 12px;
+  border-top-right-radius: 12px;
+}
+
+.close {
+  color: red;
 }

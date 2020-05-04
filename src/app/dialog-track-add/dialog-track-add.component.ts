@@ -26,6 +26,6 @@ export class DialogTrackAddComponent implements OnInit {
   }
 
   addTrack() {
-    console.log("submit", this.form);
+    console.log();
   }
 }

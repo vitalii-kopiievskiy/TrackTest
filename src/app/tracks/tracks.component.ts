@@ -19,7 +19,6 @@ export class TracksComponent implements OnInit {
     const dialogRef = this.dialog.open(DialogTrackRemoveComponent, {
       width: "300px",
     });
-    console.log(trackName);
   }
   ngOnInit(): void {}
 }

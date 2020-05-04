@@ -1,6 +1,11 @@
-<input
-  type="text"
-  placeholder="Search asset..."
-  [(ngModel)]="trackService.search"
-/>
-<button mat-raised-button (click)="openDialog()">Add</button>
+<div class="d-flex">
+  <input
+    type="text"
+    placeholder="Search asset..."
+    [(ngModel)]="trackService.search"
+    class="form-control"
+  />
+  <button mat-raised-button (click)="openDialog()" class="btn btn-success ml-3">
+    Add Asset
+  </button>
+</div>

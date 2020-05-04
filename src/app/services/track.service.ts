@@ -9,15 +9,14 @@ export interface Track {
   name: any;
   lat: number;
   long: number;
-  // id?: number;
 }
 
 @Injectable({
   providedIn: "root",
 })
 export class trackService {
-  lat: number = -23.8779431;
-  lng: number = -49.8046873;
+  lat: number = -30.8779431;
+  lng: number = -45.8046873;
   zoom: number = 5;
 
   newName: string;
@@ -38,13 +37,8 @@ export class trackService {
       long: -74.0059731,
     },
   ];
-  constructor(public dialog: MatDialog) {}
 
-  setCoord(track) {
-    console.log(track);
-    this.lat = track.lat;
-    this.lng = track.long;
-  }
+  constructor(public dialog: MatDialog) {}
 
   addTrack() {
     if (this.newName.trim() && this.newLat.trim() && this.newLong.trim()) {
@@ -54,15 +48,17 @@ export class trackService {
         long: +this.newLong,
       };
 
-      console.log(newTrack);
       this.tracks.push(newTrack);
       this.newName = this.newLat = this.newLong = "";
     }
-    console.log(this.tracks);
+  }
+
+  setCoord(track) {
+    this.lat = track.lat;
+    this.lng = track.long;
   }
 
   deleteTrack(track) {
     this.tracks = this.tracks.filter((c) => c.name !== track.name);
-    console.log(track.name);
   }
 }

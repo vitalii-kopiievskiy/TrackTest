@@ -3,12 +3,8 @@
     <h5 class="dialog__title">Add new asset</h5>
     <form [formGroup]="form" (ngSubmit)="addTrack()">
       <div class="row">
-        <div class="col-4 d-flex flex-column">
+        <div class="col-12 d-flex justify-content-between pb-2">
           <label for="name">Name</label>
-          <label for="lat">Latitude</label>
-          <label for="long">Longitude</label>
-        </div>
-        <div class="col-8">
           <input
             type="text"
             id="name"
@@ -16,12 +12,16 @@
             [(ngModel)]="trackService.newName"
             formControlName="name"
           />
-          <div
-            class="validations"
-            *ngIf="form.get('name').invalid && form.get('name').touched"
-          >
-            <small>Заполните поле name</small>
-          </div>
+        </div>
+        <div
+          class="validations col-12 d-flex justify-content-end"
+          *ngIf="form.get('name').invalid && form.get('name').touched"
+        >
+          <small>Field name is empty</small>
+        </div>
+
+        <div class="col-12 d-flex justify-content-between pb-2">
+          <label for="lat">Latitude</label>
           <input
             type="text"
             id="lat"
@@ -29,12 +29,15 @@
             [(ngModel)]="trackService.newLat"
             formControlName="latitude"
           />
-          <div
-            class="validations"
-            *ngIf="form.get('latitude').invalid && form.get('latitude').touched"
-          >
-            <small>Заполните поле latitude</small>
-          </div>
+        </div>
+        <div
+          class="validations col-12 d-flex justify-content-end"
+          *ngIf="form.get('latitude').invalid && form.get('latitude').touched"
+        >
+          <small>Field latitude is empty</small>
+        </div>
+        <div class="col-12 d-flex justify-content-between pb-2">
+          <label for="long">Longitude</label>
           <input
             type="text"
             id="long"
@@ -42,25 +45,29 @@
             [(ngModel)]="trackService.newLong"
             formControlName="longitude"
           />
-          <div
-            class="validations"
-            *ngIf="
-              form.get('longitude').invalid && form.get('longitude').touched
-            "
+        </div>
+        <div
+          class="validations col-12 d-flex justify-content-end"
+          *ngIf="form.get('longitude').invalid && form.get('longitude').touched"
+        >
+          <small>Field longitude is empty</small>
+        </div>
+        <div
+          mat-mat-dialog-actions
+          class="col-12 d-flex justify-content-end mt-2"
+        >
+          <button mat-dialog-close type="button" class="btn btn-warning">
+            Cancel
+          </button>
+          <button
+            mat-dialog-close
+            (click)="trackService.addTrack()"
+            type="submit"
+            [disabled]="form.invalid"
+            class="btn btn-success ml-3"
           >
-            <small>Заполните поле longitude</small>
-          </div>
-          <div mat-mat-dialog-actions>
-            <button mat-dialog-close type="button">Cancel</button>
-            <button
-              mat-dialog-close
-              (click)="trackService.addTrack()"
-              type="submit"
-              [disabled]="form.invalid"
-            >
-              Add
-            </button>
-          </div>
+            Add
+          </button>
         </div>
       </div>
     </form>

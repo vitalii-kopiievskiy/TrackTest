@@ -15,20 +15,12 @@ import { DialogTrackAddComponent } from "../dialog-track-add/dialog-track-add.co
   styleUrls: ["./tracks-forms.component.scss"],
 })
 export class TracksFormsComponent implements OnInit {
-  animal: string;
-  name: string;
-
   constructor(public trackService: trackService, public dialog: MatDialog) {}
-  openDialog() {
-    const dialogRef = this.dialog.open(DialogTrackAddComponent, {
-      width: "300px",
-    });
 
-    // dialogRef.afterClosed().subscribe((result) => {
-    //   console.log("The dialog was closed");
-    //   this.animal = result;
-    //   console.log(this.animal);
-    // });
+  openDialog() {
+    this.dialog.open(DialogTrackAddComponent, {
+      width: "400px",
+    });
   }
   ngOnInit(): void {}
 }
