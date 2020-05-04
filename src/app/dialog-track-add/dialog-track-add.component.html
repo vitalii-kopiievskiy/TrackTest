@@ -3,7 +3,7 @@
     <h5 class="title">Add new asset</h5>
     <form [formGroup]="form" (ngSubmit)="addTrack()">
       <div class="row">
-        <div class="col-12 d-flex justify-content-between pb-4 pt-3">
+        <div class="field col-12 d-flex justify-content-between pt-3">
           <label for="name">Name</label>
           <input
             type="text"
@@ -14,13 +14,13 @@
           />
         </div>
         <div
-          class="validations col-12 d-flex justify-content-end mt-n4"
+          class="validations col-12 d-flex justify-content-end"
           *ngIf="form.get('name').invalid && form.get('name').touched"
         >
           <small>Field name is empty</small>
         </div>
 
-        <div class="col-12 d-flex justify-content-between pb-4">
+        <div class="field col-12 d-flex justify-content-between">
           <label for="lat">Latitude</label>
           <input
             type="text"
@@ -31,12 +31,12 @@
           />
         </div>
         <div
-          class="validations col-12 d-flex justify-content-end mt-n4"
+          class="validations col-12 d-flex justify-content-end"
           *ngIf="form.get('latitude').invalid && form.get('latitude').touched"
         >
           <small>Field latitude is empty</small>
         </div>
-        <div class="col-12 d-flex justify-content-between pb-4">
+        <div class="field col-12 d-flex justify-content-between">
           <label for="long">Longitude</label>
           <input
             type="text"
@@ -47,7 +47,7 @@
           />
         </div>
         <div
-          class="validations col-12 d-flex justify-content-end mt-n4"
+          class="validations col-12 d-flex justify-content-end"
           *ngIf="form.get('longitude').invalid && form.get('longitude').touched"
         >
           <small>Field longitude is empty</small>
