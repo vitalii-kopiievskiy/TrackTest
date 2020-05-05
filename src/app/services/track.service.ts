@@ -4,6 +4,11 @@ export interface Track {
   name: any;
   lat: number;
   long: number;
+  id: any;
+}
+
+function generateTrackId() {
+  return Math.floor(Math.random() * 99999);
 }
 
 @Injectable({
@@ -18,7 +23,7 @@ export class trackService {
   newLat: any;
   newLong: any;
 
-  removedTrackName: string;
+  removedTrackId: number;
 
   searchValue = "";
 
@@ -27,16 +32,19 @@ export class trackService {
       name: "Truck001",
       lat: 51.49848455,
       long: -0.11260986,
+      id: 1,
     },
     {
       name: "Truck002",
       lat: 48.83579746,
       long: 2.35931396,
+      id: 2,
     },
     {
       name: "Truck003",
       lat: 52.50284766,
       long: 13.39782715,
+      id: 3,
     },
   ];
 
@@ -48,7 +56,9 @@ export class trackService {
         name: this.newName,
         lat: +this.newLat,
         long: +this.newLong,
+        id: generateTrackId(),
       };
+      console.log(this.tracks);
 
       this.tracks.push(newTrack);
       this.newName = this.newLat = this.newLong = "";
@@ -60,10 +70,12 @@ export class trackService {
     this.lng = track.long;
   }
 
-  getRemovedTrackName(trackName) {
-    this.removedTrackName = trackName;
+  getRemovedTrackId(trackId) {
+    this.removedTrackId = trackId;
   }
   removeTrack() {
-    this.tracks = this.tracks.filter((c) => c.name !== this.removedTrackName);
+    this.tracks = this.tracks.filter(
+      (track) => track.id !== this.removedTrackId
+    );
   }
 }
