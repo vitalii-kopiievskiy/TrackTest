@@ -24,6 +24,7 @@ export class trackService {
   newLong: any;
 
   removedTrackId: number;
+  removedTrackName: string;
 
   searchValue = "";
 
@@ -70,8 +71,9 @@ export class trackService {
     this.lng = track.long;
   }
 
-  getRemovedTrackId(trackId) {
-    this.removedTrackId = trackId;
+  getRemovedTrackId(removedTrack) {
+    this.removedTrackId = removedTrack.id;
+    this.removedTrackName = removedTrack.name;
   }
   removeTrack() {
     this.tracks = this.tracks.filter(

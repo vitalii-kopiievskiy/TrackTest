@@ -34,7 +34,12 @@
           class="validations col-12 d-flex justify-content-end"
           *ngIf="form.get('latitude').invalid && form.get('latitude').touched"
         >
-          <small>Field latitude is empty</small>
+          <small *ngIf="form.get('latitude').errors.required"
+            >Field latitude is empty</small
+          >
+          <small *ngIf="form.get('latitude').errors.pattern"
+            >Enter the latitude in numeric format from -90 to +90
+          </small>
         </div>
         <div class="field col-12 d-flex justify-content-between">
           <label for="long">Longitude</label>
@@ -50,7 +55,12 @@
           class="validations col-12 d-flex justify-content-end"
           *ngIf="form.get('longitude').invalid && form.get('longitude').touched"
         >
-          <small>Field longitude is empty</small>
+          <small *ngIf="form.get('longitude').errors.required"
+            >Field longitude is empty</small
+          >
+          <small *ngIf="form.get('longitude').errors.pattern"
+            >Enter the longitude in numeric format from -180 to +180
+          </small>
         </div>
         <div
           mat-mat-dialog-actions
