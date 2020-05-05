@@ -59,7 +59,6 @@ export class trackService {
         long: +this.newLong,
         id: generateTrackId(),
       };
-      console.log(this.tracks);
 
       this.tracks.push(newTrack);
       this.newName = this.newLat = this.newLong = "";
