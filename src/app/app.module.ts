@@ -5,15 +5,16 @@ import { AgmCoreModule } from "@agm/core";
 import { MatDialogModule } from "@angular/material/dialog";
 import { MatFormFieldModule } from "@angular/material/form-field";
 import { MatInputModule } from "@angular/material/input";
+import { NoopAnimationsModule } from "@angular/platform-browser/animations";
+
+import { SearchPipe } from "./pipes/search.pipe";
 
 import { AppComponent } from "./app.component";
 import { TracksComponent } from "./tracks/tracks.component";
 import { TracksFormsComponent } from "./tracks-forms/tracks-forms.component";
 import { MapComponent } from "./map/map.component";
-import { NoopAnimationsModule } from "@angular/platform-browser/animations";
 import { DialogTrackAddComponent } from "./dialog-track-add/dialog-track-add.component";
 import { DialogTrackRemoveComponent } from "./dialog-track-remove/dialog-track-remove.component";
-import { SearchPipe } from "./pipes/search.pipe";
 
 @NgModule({
   declarations: [

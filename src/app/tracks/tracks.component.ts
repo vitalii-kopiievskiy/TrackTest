@@ -1,11 +1,7 @@
-import { Component, OnInit, Output } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { trackService } from "../services/track.service";
 
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from "@angular/material/dialog";
+import { MatDialog } from "@angular/material/dialog";
 
 import { DialogTrackRemoveComponent } from "../dialog-track-remove/dialog-track-remove.component";
 

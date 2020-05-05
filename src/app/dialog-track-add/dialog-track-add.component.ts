@@ -1,11 +1,6 @@
-import { Component, OnInit, Inject } from "@angular/core";
+import { Component, OnInit } from "@angular/core";
 import { trackService } from "../services/track.service";
 import { FormGroup, FormControl, Validators } from "@angular/forms";
-
-export interface DialogData {
-  animal: string;
-  name: string;
-}
 
 @Component({
   selector: "app-dialog-track-add",
@@ -19,13 +14,9 @@ export class DialogTrackAddComponent implements OnInit {
 
   ngOnInit() {
     this.form = new FormGroup({
-      name: new FormControl("Truck001", Validators.required),
+      name: new FormControl("", Validators.required),
       latitude: new FormControl("", Validators.required),
       longitude: new FormControl("", Validators.required),
     });
-  }
-
-  addTrack() {
-    console.log();
   }
 }

@@ -1,9 +1,4 @@
 import { Injectable } from "@angular/core";
-import {
-  MatDialog,
-  MatDialogRef,
-  MAT_DIALOG_DATA,
-} from "@angular/material/dialog";
 
 export interface Track {
   name: any;
@@ -15,30 +10,37 @@ export interface Track {
   providedIn: "root",
 })
 export class trackService {
-  lat: number = -30.8779431;
-  lng: number = -45.8046873;
-  zoom: number = 5;
+  lat: number = 40.7143528;
+  lng: number = -74.0059731;
+  zoom: number = 6;
 
   newName: string;
   newLat: any;
   newLong: any;
+
   removedTrackName: string;
-  search = "";
+
+  searchValue = "";
 
   tracks: Track[] = [
     {
       name: "Truck001",
-      lat: -23.8779431,
-      long: -49.8046873,
+      lat: 51.49848455,
+      long: -0.11260986,
     },
     {
       name: "Truck002",
-      lat: 51.50190411,
-      long: -74.0059731,
+      lat: 48.83579746,
+      long: 2.35931396,
+    },
+    {
+      name: "Truck003",
+      lat: 52.50284766,
+      long: 13.39782715,
     },
   ];
 
-  constructor(public dialog: MatDialog) {}
+  constructor() {}
 
   addTrack() {
     if (this.newName.trim() && this.newLat.trim() && this.newLong.trim()) {
@@ -57,10 +59,10 @@ export class trackService {
     this.lat = track.lat;
     this.lng = track.long;
   }
+
   getRemovedTrackName(trackName) {
     this.removedTrackName = trackName;
   }
-
   removeTrack() {
     this.tracks = this.tracks.filter((c) => c.name !== this.removedTrackName);
   }
